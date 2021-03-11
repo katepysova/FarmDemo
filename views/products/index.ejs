@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+</head>
+<body>
+    <h1><%=category[0].toUpperCase() + category.slice(1)%> Products</h1>
+    <ul>
+        <%for (let product of products) {%>
+            <li>
+                <%=product.name%>
+                <a href="http://localhost:8080/products/<%=product._id%>">More info</a>
+            </li>
+        <%}%>
+    </ul>
+    <a href="http://localhost:8080/products/new">Add new product</a>
+    <%if(category !== "All") {%>
+        <a href="/products">All Products</a>
+    <%}%>
+</body>
+</html

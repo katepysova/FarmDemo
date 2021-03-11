@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=product.name%></title>
+</head>
+<body>
+    <h2>Farm: <%=product.farm.name%></h2>
+    <h2>Name: <%=product.name%></h2> 
+    <h2>Price: <%=product.price%></h2>
+    <h2>Category: <a href="http://localhost:8080/products?category=<%=product.category%>"><%=product.category%></a></h2>
+    <h2>Farm: <a href="/farms/<%=product.farm._id%>">Go to Products farm</a></h2>
+    <a href="http://localhost:8080/products/<%=product._id%>/edit">Edit</a>
+
+    <form method="POST" action="http://localhost:8080/products/<%=product._id%>?_method=DELETE">
+        <button>Delete</button>
+    </form>
+    
+    <a href="http://localhost:8080/products">Go back</a>
+</body>
+</html>

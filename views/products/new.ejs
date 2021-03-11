@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Product</title>
+</head>
+<body>
+    <h2>Adding a new Product to <%=farm.name%></h2>
+    
+    <form action="/farms/<%=farm._id%>/products" method="POST">
+        <section>
+            <label for="name"> Product name: 
+                <input type="text" id="name" name="name" placeholder="product name">
+            </label>
+        </section>
+
+        <section>
+            <label for="price"> Product price:
+                <input type="text" id="price" name="price" placeholder="product price">
+            </label>
+        </section> 
+        
+        <section>
+            <label for="category"> Product category:
+                <select id="category" name="category">
+                    <%for (let category of categories) {%>
+                        <option value=<%=category%>><%=category%></option>
+                    <%}%>
+                </select>
+            </label>
+        </section>
+        
+        <button>Submit</button>
+    </form>
+    <a href="/farms/<%=farm._id%>">Go back</a>
+</body>
+</html>
